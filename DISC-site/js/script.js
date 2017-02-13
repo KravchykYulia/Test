@@ -181,9 +181,9 @@ function drawChartResult(resultD,  resultI,  resultS, resultC) {
 
 $('.result-button button').click(function(eventObject) {
   //1. Check if there is all answers: - display alert "Заполните, пожалуйста, все блоки!"
- if (results.length<24) {alert ("Заполните, пожалуйста, все блоки!");} 
+// if (results.length<24) {alert ("Заполните, пожалуйста, все блоки!");}    Убрать!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   //2. Count and display results
- else { 
+// else {                                                                  Убрать!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     resultD=letterSelector(results, "most", "D").length - letterSelector(results, "less", "D").length;
     resultI=letterSelector(results, "most", "I").length - letterSelector(results, "less", "I").length;
     resultS=letterSelector(results, "most", "S").length - letterSelector(results, "less", "S").length;
@@ -193,12 +193,75 @@ $('.result-button button').click(function(eventObject) {
     drawChartResult(resultD,  resultI,  resultS, resultC);
 
     
-} 
+//}                                                                        Убрать!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 });
 
 
-}); // ready function    
+}); // ready function  
+
+(function (global) {
+
+ var dc = {};
+
+ var homeHtml = "snippets/home-snippet.html";
+ var testPageHtml = "snippets/test-page.html";
+ var testResultHtml = "snippets/test-result.html";
+
+ // Convenience function for inserting innerHTML for 'select'
+ var insertHtml = function (selector, html) {
+   var targetElem = document.querySelector(selector);
+   targetElem.innerHTML = html;
+ };
+
+// Show loading icon inside element identified by 'selector'.
+var showLoading = function (selector) {
+  var html = "<div class='text-center'>";
+  html += "<img src='images/ajax-loader.gif'></div>";
+  insertHtml(selector, html);
+};
+
+// On page load (before images or CSS)
+document.addEventListener("DOMContentLoaded", function (event) {
+
+// On first load, show home view
+showLoading("#main-content");
+$ajaxUtils.sendGetRequest(
+  homeHtml,
+  function (responseText) {
+    document.querySelector("#main-content")
+      .innerHTML = responseText;
+  },
+  false);
+});
+
+//Load the test-page view
+dc.loadtestPage = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    testPageHtml,
+    function (responseText) {
+    document.querySelector("#main-content")
+      .innerHTML = responseText;
+    },
+  false);
+};
+//Load the result test page view
+dc.loadresultPage = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    testResultHtml,
+    function (responseText) {
+    document.querySelector("#main-content")
+      .innerHTML = responseText;
+    },
+  false);
+};
+
+global.$dc = dc;
+
+})(window);
+  
 
 
 

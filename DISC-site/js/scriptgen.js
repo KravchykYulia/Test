@@ -1,17 +1,16 @@
-// (function (global) {
+//  (function (global) {
 
-// var dc = {};
+//  var dc = {};
 
-// var homeHtml = "snippets/home-snippet.html";
-// // var testPageHtml = "snippets/test-page.html";
-// // var testResultHtml = "snippets/test-result.html";
+//  var homeHtml = "snippets/home-snippet.html";
+//  var testPageHtml = "snippets/test-page.html";
+//  var testResultHtml = "snippets/test-result.html";
 
-
-// // Convenience function for inserting innerHTML for 'select'
-// var insertHtml = function (selector, html) {
-//   var targetElem = document.querySelector(selector);
-//   targetElem.innerHTML = html;
-// };
+//  // Convenience function for inserting innerHTML for 'select'
+//  var insertHtml = function (selector, html) {
+//    var targetElem = document.querySelector(selector);
+//    targetElem.innerHTML = html;
+//  };
 
 // // Show loading icon inside element identified by 'selector'.
 // var showLoading = function (selector) {
@@ -34,22 +33,27 @@
 //   false);
 // });
 
-// Load the menu categories view
-// dc.loadMenuCategories = function () {
+// //Load the test-page view
+// dc.loadtestPage = function () {
 //   showLoading("#main-content");
 //   $ajaxUtils.sendGetRequest(
-//     allCategoriesUrl,
-//     buildAndShowCategoriesHTML);
+//     testPageHtml,
+//     function (responseText) {
+//     document.querySelector("#main-content")
+//       .innerHTML = responseText;
+//     },
+//   false);
 // };
-
-
-// // Load the menu items view
-// // 'categoryShort' is a short_name for a category
-// dc.loadMenuItems = function (categoryShort) {
+// //Load the result test page view
+// dc.loadresultPage = function () {
 //   showLoading("#main-content");
 //   $ajaxUtils.sendGetRequest(
-//     menuItemsUrl + categoryShort,
-//     buildAndShowMenuItemsHTML);
+//     testResultHtml,
+//     function (responseText) {
+//     document.querySelector("#main-content")
+//       .innerHTML = responseText;
+//     },
+//   false);
 // };
 
 

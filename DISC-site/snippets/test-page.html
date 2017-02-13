@@ -1,27 +1,132 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DISC-тест</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Rubik:700" rel="stylesheet"> 
-   
-  </head>
-<body>
-  
-
-   
-  
-  <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/script.js"></script>
- <!--  <script src="js/ajax-utils.js"></script> -->
-  <!-- <script src="js/script.js"></script> -->
-  <!-- Script to Activate the Carousel Перенести в js -->
-</body>
-</html>
- --> -->
+<div id="test-page" class="container">
+         <section id="block-introduction"> 
+         <div id="introduction-heading"> <h2 >Тестирование DISC</h2> </div>
+         <p>В каждом блоке из четырех прилагательных выберете <strong>два</strong>: одно, которое наиболее Вам соответствует, второе, которое наименее Вам соответствует.</p>
+         <p>В тесте нет правильных или неправильных ответов. Для получения достоверного результата, отвечайте не задумываясь. Отмечайте те ответы, которые сразу приходят Вам в голову.</p>
+       </section>
+       <nav aria-label="Block navigation">
+         <ul class="pagination">
+           <li class="pag"><a href="#">1 </a></li>
+           <li class="pag"><a href="#">2 </a></li>
+           <li class="pag"><a href="#">3 </a></li>
+           <li class="pag"><a href="#">4 </a></li>
+           <li class="pag"><a href="#">5 </a></li>
+           <li class="pag"><a href="#">6 </a></li>
+           <li class="pag"><a href="#">7 </a></li>
+           <li class="pag"><a href="#">8 </a></li>
+        </ul>
+       </nav>
+<!-- =======================Block1==========================-->
+       <div class="block-body" id="block">
+       <div id="table1" class="table-responsive col-md-4">
+        <table  class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Наиболее</th>
+              <th>Наименее</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Экспрессивный</td>
+              <td><input type="radio" id="most1.1" data-table="1" data-type="most" name="most1" value="I" /></td>
+              <td><input type="radio" id="less1.1" data-table="1" data-type="less" name="less1" value="I" /></td>
+            </tr>
+            <tr>
+              <td>Покладистый</td>
+              <td><input type="radio" id="most1.2" data-table="1" data-type="most" name="most1" value="C" /></td>
+              <td><input type="radio" id="less1.2" data-table="1" data-type="less" name="less1" value="C" /></td>       
+            </tr>
+            <tr>
+              <td>Волевой</td>
+              <td><input type="radio" id="most1.3" data-table="1" data-type="most" name="most1" value="D" /></td>
+              <td><input type="radio" id="less1.3" data-table="1" data-type="less" name="less1" value="D" /></td>
+            </tr>
+            <tr>
+              <td>Осторожный</td>
+              <td><input type="radio" id="most1.4" data-table="1" data-type="most" name="most1" value="S" /></td>
+              <td><input type="radio" id="less1.4" data-table="1" data-type="less" name="less1" value="S" /></td>
+            </tr>
+          </tbody>
+        </table>   
+        </div>
+        <div id="table2" class="table-responsive col-md-4">
+        <table  class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Наиболее</th>
+              <th>Наименее</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Пылкий</td>
+              <td><input type="radio" id="most2.1" data-table="2" data-type="most" name="most2" value="D" /></td>
+              <td><input type="radio" id="less2.1" data-table="2" data-type="less" name="less2" value="D" /></td>
+            </tr>
+            <tr>
+              <td>Разговорчивый</td>
+              <td><input type="radio" id="most2.2" data-table="2" data-type="most" name="most2" value="I" /></td>
+              <td><input type="radio" id="less2.2" data-table="2" data-type="less" name="less2" value="I" /></td>
+            </tr>
+            <tr>
+              <td>Добродушный</td>
+              <td><input type="radio" id="most2.3" data-table="2" data-type="most" name="most2" value="S" /></td>
+              <td><input type="radio" id="less2.3" data-table="2" data-type="less" name="less2" value="S" /></td>
+            </tr>
+            <tr>
+              <td>Сдержанный</td>
+              <td><input type="radio" id="most2.4" data-table="2" data-type="most" name="most2" value="C" /></td>
+              <td><input type="radio" id="less2.4" data-table="2" data-type="less" name="less2" value="C" /></td>
+            </tr>
+          </tbody>
+        </table>   
+        </div>
+        <div id="table3" class="table-responsive col-md-4">
+        <table  class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Наиболее</th>
+              <th>Наименее</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Любитель приключений</td>
+              <td><input type="radio" id="most3.1" data-table="3" data-type="most" name="most3" value="D" /></td>
+              <td><input type="radio" id="less3.1" data-table="3" data-type="less" name="less3" value="D" /></td>
+            </tr>
+            <tr>
+              <td>Энтузиаст</td>
+              <td><input type="radio" id="most3.2" data-table="3" data-type="most" name="most3" value="I" /></td>
+              <td><input type="radio" id="less3.2" data-table="3" data-type="less" name="less3" value="I" /></td>
+            </tr>
+            <tr>
+              <td>Исполнитель инструкций</td>
+              <td><input type="radio" id="most3.3" data-table="3" data-type="most" name="most3" value="C" /></td>
+              <td><input type="radio" id="less3.3" data-table="3" data-type="less" name="less3" value="C" /></td>
+            </tr>
+            <tr>
+              <td>Верный</td>
+              <td><input type="radio" id="most3.4" data-table="3" data-type="most" name="most3" value="S" /></td>
+              <td><input type="radio" id="less3.4" data-table="3" data-type="less" name="less3" value="S" /></td>
+            </tr>
+          </tbody>
+        </table>   
+          </div>
+       </div>      
+<!-- =======================Next-Previous-Pager==========================-->
+       <nav aria-label="Block pager">
+          <ul class="pager">
+            <li><a class="previous" href="#">Previous</a></li>
+            <li><a class="next" href="#">Next</a></li>
+          </ul>
+       </nav>
+<!-- =======================Result-button==========================-->
+       <div class="container result-button">
+          <button type="button" class="btn" onclick="$dc.loadresultPage();"> Завершить тест</button>
+       </div>
+</div>
