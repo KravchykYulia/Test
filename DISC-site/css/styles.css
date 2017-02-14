@@ -254,6 +254,15 @@ header, .carousel {
   color: #8f0b27;
   font-size: 20px;
 }
+#aboutBase .cub {
+  position: relative;
+}
+#aboutBase .cub img {
+  position: absolute;
+  top: -70px;
+  right: 150px;
+  height: 350px;
+}
 /** aboutType **/
 #aboutType {
  background-color: #e0ded9;
@@ -313,24 +322,32 @@ header, .carousel {
 footer.panel-footer {
   background-color: #373737;
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
   vertical-align: baseline;
 }
-footer .fa {
+footer.panel-footer .fa {
     display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
+    font: normal normal normal 16px/1 FontAwesome;
+    font-size: inherit;  
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+footer .social-buttons {
+  line-height: 1.5em;
+  font-size: 30px;
+}
+
 footer span {
-  font-size: 1.5em;
+  font-size: 1,5em;
 }
 footer ul {
   list-style: none;
   margin-left: 0;
   padding-left: 0;
+}
+footer .text-center{
+  font-size: 12px;
 }
 /** TEST PAGE**/
 #test-page {
