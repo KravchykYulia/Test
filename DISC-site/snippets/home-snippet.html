@@ -1,4 +1,39 @@
-
+<div class="slider">  
+  <div id="mySlider" class="carousel slide">
+    <!-- Slider -->
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#mySlider" data-slide-to="0" class="active"></li>
+            <li data-target="#mySlider" data-slide-to="1"></li>
+        </ol>
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div id="carousel-img1" class="fill"></div>
+            </div>
+            <div class="item">
+                <div id="carousel-img2" class="fill"></div>
+            </div>
+        </div> <!-- .carousel-inner -->
+        <!-- Controls -->
+        <a class="left carousel-control" href="#mySlider" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#mySlider" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+     <!-- Title content --> 
+        <div id="title-content" class="container">
+              <h2 class="extra-bold">Определи свой тип с помощью</h2>
+              <h1 class="extra-bold">DISC-тест</h1>
+              <h4>Для достижения успеха и эффективного взаимодействия с другими людьми</h4>
+        </div>
+    </div>  <!-- #mySlider --> 
+     <!-- Button -->
+    <div class="button-center">
+    <button type="button" class="btn" data-toggle="modal" data-target="" onclick="$dc.loadtestPage();">Пройти тест</button>
+    </div>
+  </div>
    <div id="aboutTest" class="container">
      <div class="row">
       <div id="testImg" class="col-md-5">
@@ -63,9 +98,9 @@
          Характеристика людей с высоким фактором:
          </section>
         
-        <div class="col-xs-6 col-md-3"><a href="#" class="thumbnail"><div id="typeD"><span>D</span><img src="images/breadcrumb-arrow.png" alt="D"></div></a></div>
-        <div class="col-xs-6 col-md-3"><a href="#" class="thumbnail"><div id="typeI"><span>I</span><img src="images/breadcrumb-arrow.png" alt="I"></div></a></div>
-        <div class="col-xs-6 col-md-3"><a href="#" class="thumbnail"><div id="typeS"><span>S</span><img src="images/breadcrumb-arrow.png" alt="S"></div></a></div>
-        <div class="col-xs-6 col-md-3"><a href="#" class="thumbnail"><div id="typeC"><span>C</span><img src="images/breadcrumb-arrow.png" alt="C"></div></a></div>
+        <div class="col-xs-6 col-md-3"><a href="#" class="thumbnail" onclick="$dc.loadDPage();"><div id="typeD"><span>D</span><img src="images/breadcrumb-arrow.png" alt="D"></div></a></div>
+        <div class="col-xs-6 col-md-3"><a href="#" class="thumbnail" onclick="$dc.loadIPage();"><div id="typeI"><span>I</span><img src="images/breadcrumb-arrow.png" alt="I"></div></a></div>
+        <div class="col-xs-6 col-md-3"><a href="#" class="thumbnail" onclick="$dc.loadSPage();"><div id="typeS"><span>S</span><img src="images/breadcrumb-arrow.png" alt="S"></div></a></div>
+        <div class="col-xs-6 col-md-3"><a href="#" class="thumbnail" onclick="$dc.loadCPage();"><div id="typeC"><span>C</span><img src="images/breadcrumb-arrow.png" alt="C"></div></a></div>
      </div>
    </div>

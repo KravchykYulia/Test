@@ -1,4 +1,112 @@
-$(function () { 
+(function (global) {
+
+ var dc = {};
+
+ var homeHtml = "snippets/home-snippet.html";
+ var testPageHtml = "snippets/test-page.html";
+ var testResultHtml = "snippets/test-result.html";
+ var DHtml= "snippets/D-snippet.html";
+ var IHtml= "snippets/I-snippet.html";
+ var SHtml= "snippets/S-snippet.html";
+ var CHtml= "snippets/C-snippet.html";
+
+ // Convenience function for inserting innerHTML for 'select'
+ var insertHtml = function (selector, html) {
+   var targetElem = document.querySelector(selector);
+   targetElem.innerHTML = html;
+ };
+
+// Show loading icon inside element identified by 'selector'.
+var showLoading = function (selector) {
+  var html = "<div class='text-center'>";
+  html += "<img src='images/ajax-loader.gif'></div>";
+  insertHtml(selector, html);
+};
+
+// On page load (before images or CSS)
+document.addEventListener("DOMContentLoaded", function (event) {
+
+// On first load, show home view
+showLoading("#main-content");
+$ajaxUtils.sendGetRequest(
+  homeHtml,
+  function (responseText) {
+    document.querySelector("#main-content")
+      .innerHTML = responseText;
+  },
+  false);
+});
+
+//Load the test-page view
+dc.loadtestPage = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    testPageHtml,
+    function (responseText) {
+    document.querySelector("#main-content")
+      .innerHTML = responseText;
+    },
+  false);
+};
+//Load the result test page view
+dc.loadresultPage = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    testResultHtml,
+    function (responseText) {
+    document.querySelector("#main-content")
+      .innerHTML = responseText;
+    },
+  false);
+};
+//Load the about D page view
+dc.loadDPage = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    DHtml,
+    function (responseText) {
+    document.querySelector("#main-content")
+      .innerHTML = responseText;
+    },
+  false);
+};
+//Load the about I page view
+dc.loadIPage = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    IHtml,
+    function (responseText) {
+    document.querySelector("#main-content")
+      .innerHTML = responseText;
+    },
+  false);
+};//Load the about S page view
+dc.loadSPage = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    SHtml,
+    function (responseText) {
+    document.querySelector("#main-content")
+      .innerHTML = responseText;
+    },
+  false);
+};//Load the about C page view
+dc.loadCPage = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    CHtml,
+    function (responseText) {
+    document.querySelector("#main-content")
+      .innerHTML = responseText;
+    },
+  false);
+};
+global.$dc = dc;
+
+// })(window);
+  
+
+// $(function () { 
 $("#navbarToggle").blur(function (event) {
     var screenWidth = window.innerWidth;
     if (screenWidth < 768) {
@@ -187,8 +295,11 @@ $('.result-button button').click(function(eventObject) {
     resultD=letterSelector(results, "most", "D").length - letterSelector(results, "less", "D").length;
     resultI=letterSelector(results, "most", "I").length - letterSelector(results, "less", "I").length;
     resultS=letterSelector(results, "most", "S").length - letterSelector(results, "less", "S").length;
-    resultC=letterSelector(results, "most", "C").length - letterSelector(results, "less", "C").length; 
-  //  $('#results').html("<b>D</b>:  " + resultD + "</br><b>I</b>:  " + resultI + "</br><b>S</b>:  " + resultS + "</br><b>C</b>:  " + resultC);
+    resultC=letterSelector(results, "most", "C").length - letterSelector(results, "less", "C").length;
+    $('#resultD').text(resultD);
+    $('#resultI').text(resultI);
+    $('#resultS').text(resultS);
+    $('#resultC').text(resultC);
     $('#resultsModal').modal("toggle");
     drawChartResult(resultD,  resultI,  resultS, resultC);
 
@@ -198,70 +309,11 @@ $('.result-button button').click(function(eventObject) {
 });
 
 
-}); // ready function  
-
-(function (global) {
-
- var dc = {};
-
- var homeHtml = "snippets/home-snippet.html";
- var testPageHtml = "snippets/test-page.html";
- var testResultHtml = "snippets/test-result.html";
-
- // Convenience function for inserting innerHTML for 'select'
- var insertHtml = function (selector, html) {
-   var targetElem = document.querySelector(selector);
-   targetElem.innerHTML = html;
- };
-
-// Show loading icon inside element identified by 'selector'.
-var showLoading = function (selector) {
-  var html = "<div class='text-center'>";
-  html += "<img src='images/ajax-loader.gif'></div>";
-  insertHtml(selector, html);
-};
-
-// On page load (before images or CSS)
-document.addEventListener("DOMContentLoaded", function (event) {
-
-// On first load, show home view
-showLoading("#main-content");
-$ajaxUtils.sendGetRequest(
-  homeHtml,
-  function (responseText) {
-    document.querySelector("#main-content")
-      .innerHTML = responseText;
-  },
-  false);
-});
-
-//Load the test-page view
-dc.loadtestPage = function () {
-  showLoading("#main-content");
-  $ajaxUtils.sendGetRequest(
-    testPageHtml,
-    function (responseText) {
-    document.querySelector("#main-content")
-      .innerHTML = responseText;
-    },
-  false);
-};
-//Load the result test page view
-dc.loadresultPage = function () {
-  showLoading("#main-content");
-  $ajaxUtils.sendGetRequest(
-    testResultHtml,
-    function (responseText) {
-    document.querySelector("#main-content")
-      .innerHTML = responseText;
-    },
-  false);
-};
-
-global.$dc = dc;
-
 })(window);
-  
+
+// }); // ready function  
+
+
 
 
 

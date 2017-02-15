@@ -1,4 +1,4 @@
-html, header, body {
+html, body {
   height: 100%;
   font-size: 20px;
  // color: #fff;
@@ -45,15 +45,14 @@ html, header, body {
   clear: both;
   margin-top: -50px;
 }
-/** HEADER **/
+/** Slider **/
 #mySlider .carousel {
   position: absolute;
   height: 500px;
 }
-header, .carousel {
+.slider, .carousel {
   height: 500px;
 }
-
 .item,
 .active {
     height: 100%;
@@ -266,6 +265,7 @@ header, .carousel {
 /** aboutType **/
 #aboutType {
  background-color: #e0ded9;
+ padding-bottom: 50px;
 }
 #aboutType, #aboutType a {
   margin: 0px;
@@ -361,7 +361,7 @@ footer .text-center{
   color: ##002147;
 }
 /*-----pagination-----*/
-#test-page .pagination {
+#test-page, #test-page .pagination, #test-page section, #test-page #introduction-heading {
   width: 100%;
 }
 #test-page .pagination li a {
@@ -380,6 +380,7 @@ footer .text-center{
    text-align: center;
    background-color: #002147;
    color: #fff;
+   height: 100px;
    }
 #introduction-heading h2 {
    font-size: 60px;
@@ -407,9 +408,9 @@ footer .text-center{
 .container .result-button {
   width: 100%;
   text-align: center;
+  margin: 50px 0;
 }
 .result-button .btn {
-  text-align: center;
   background-color:  #8f0b27;
   border: 1px solid  #8f0b27;
   display: inline-block;
@@ -421,21 +422,62 @@ footer .text-center{
   font-size: 23px;
   color: #fff;
 }
-/*-----resultsModal-----*/
-.modal-dialog {
-  width: 80%;
+/*-----D,I,S,C-snippet-----*/
+#Dheader, #Iheader, #Sheader, #Cheader {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  padding: 0;
 }
-.modal-title {
+#Dheader {
+  background-image: url(../images/peopleD1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#Iheader {
+  background-image: url(../images/peopleI2.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#Sheader {
+  background-image: url(../images/peopleS5.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#Cheader {
+  background-image: url(../images/peopleC1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#Dheader .container, #Iheader .container, #Sheader .container, #Cheader .container{
+  position: absolute;
+  z-index: 12;
+  left: 80px;
+  bottom: 0px;
   color: #8f0b27;
+  font-size: 1.5em;
+  line-height: 1.7em;
 }
-.modal-body span h3 {
-  text-align: center;
+#Dheader .text-header, #Iheader .text-header, #Sheader .text-header, #Cheader .text-header {
+  background-color: rgba(255,255,255,.8);
+} 
+#Dheader .text-header h1, #Iheader .text-header h1, #Sheader .text-header h1, #Cheader .text-header h1 {
+  font-size: 1.7em;
 }
-.modal-body span h4 {
-  text-align: center;
-  color: #002147;
+#Ddescription, #Idescription, #Sdescription, #Cdescription{
+  padding: 20px;
 }
+/*-----Test-result-----*/
 
+#test-result .table>tbody>tr>td {
+  border: none;
+}
 
 
 /********** Large devices only **********/
