@@ -56,7 +56,20 @@ dc.loadtestPage = function () {
     // $("#main-content").find("script").each(function(i) {
     //                 eval($(this).text());});
 
-   
+   for (i = 1; i <=8; i++) {
+     blockNumber=i;
+     var li = $('<li/>')
+        .addClass('pag')
+        .attr('blockNumber', blockNumber)
+        .appendTo($('ul.pagination'))
+     var a = $('<a/>')
+        .text(blockNumber)
+        .appendTo(li);
+    };
+   $('ul.pagination li').on('click', li, function(){
+      liNumber=$(this).attr('blockNumber');
+      displayBlock(liNumber);
+    });
    },
   false);
 };
