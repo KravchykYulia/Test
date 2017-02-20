@@ -47,6 +47,12 @@ dc.loadtestPage = function () {
       .innerHTML = responseText;
     // $("#main-content").find("script").each(function(i) {
     //                 eval($(this).text());});
+    
+     $('.pagination a').click(function(eventObject) {
+      blockNumber=$(this).index("a")+1;
+      displayBlock(blockNumber);
+      eventObject.preventDefault();  
+    });
    },
   false);
 };
@@ -194,11 +200,11 @@ function displayBlock(k){
    $('.pagination a').css('background','#bbb');
    $('.pagination a:eq('+(k-1)+')').css('background','#002147');
  }; 
-    $('.pagination a').click(function(eventObject) {
-      blockNumber=$(this).index("a")+1;
-      displayBlock(blockNumber);
-      eventObject.preventDefault();  
-    });
+    // $('.pagination a').click(function(eventObject) {
+    //   blockNumber=$(this).index("a")+1;
+    //   displayBlock(blockNumber);
+    //   eventObject.preventDefault();  
+    // });
 
    $('.next').click(function(eventObject) {
       blockNumber=Math.min(blockNumber+1,8); 
@@ -208,11 +214,7 @@ function displayBlock(k){
       blockNumber=Math.max(blockNumber-1,0);  
       displayBlock(blockNumber);
    });
-   // $('.pagination a').click(function(eventObject) {
-   //    blockNumber=$(this).index("a")+1;
-   //    displayBlock(blockNumber);
-   //    eventObject.preventDefault();  
-   //  });
+ 
 //  3 and 4. Add checked value: {block:#, table:#, type:type, letter: value} to array 'results' and Change value if user has changed the answer
 var results=new Array (0);
 var mostLetters=new Array(0);
