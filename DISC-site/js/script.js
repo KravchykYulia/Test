@@ -45,6 +45,8 @@ dc.loadtestPage = function () {
     function (responseText) {
     document.querySelector("#main-content")
       .innerHTML = responseText;
+    // $("#main-content").find("script").each(function(i) {
+    //                 eval($(this).text());});
    },
   false);
 };
