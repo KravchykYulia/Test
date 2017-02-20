@@ -37,6 +37,14 @@ $ajaxUtils.sendGetRequest(
   false);
 });
 
+ function dynamicEvent(blockNumber) {
+   // this.innerHTML = <a href="#">blockNumber</a>;
+    this.html("<a href='#'>blockNumber</a>");
+    displayBlock(blockNumber);
+    console.log(blockNumber);
+};
+  
+
 //Load the test-page view
 dc.loadtestPage = function () {
   showLoading("#main-content");
@@ -47,12 +55,8 @@ dc.loadtestPage = function () {
       .innerHTML = responseText;
     // $("#main-content").find("script").each(function(i) {
     //                 eval($(this).text());});
-    
-     $('.pagination a').click(function(eventObject) {
-      blockNumber=$(this).index("a")+1;
-      displayBlock(blockNumber);
-      eventObject.preventDefault();  
-    });
+
+   
    },
   false);
 };
