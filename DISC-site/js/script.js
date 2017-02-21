@@ -69,6 +69,7 @@ dc.loadtestPage = function () {
    $('ul.pagination li').on('click', li, function(){
       liNumber=$(this).attr('blockNumber');
       displayBlock(liNumber);
+      eventObject.preventDefault();  
     });
    },
   false);
