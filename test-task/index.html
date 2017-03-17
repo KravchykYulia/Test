@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <title>Test Task</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div id="overview">
+          Main
+          Overview
+    </div>
+    <div id="main" class="container" ng-controller="CustomNameListController as list">
+          <section id="items">
+          	  <h1>Items</h1>
+              <input type="text" placeholder="Type name here..." class="form-control" ng-model="list.customName">
+  
+              <button class="btn" ng-click="list.addItem();">Add new</button>
+                
+
+            <!--   <name-list
+                    items="list.items"
+                    on-remove="list.removeItem(index)"></name-list> -->
+          </section>
+
+          <section id="comments">
+              <!-- <comments-list
+                    items="list.comments"
+                    title="{{list.title}}"></comments-list> -->
+  
+              <input type="text" class="form-control" ng-model="list.customComment" ng-keypress="list.addComment($event)">
+                     
+          </section>
+
+    </div>
+
+        
+    <!-- LIST #1 - unlimited items 
+    <div id="list" ng-controller='ShoppingListController as list'>
+      <input type="text" ng-model="list.itemName" placeholder="item name">
+      <input type="text" ng-model="list.itemQuantity" placeholder="quantity">
+      <button ng-click="list.addItem();">Add Item</button>
+      <span>{{ list.lastRemoved }}</span>
+
+      <shopping-list
+        items="list.items"
+        title="{{list.title}}"
+        bad-remove="list.removeItem"
+        on-remove="list.removeItem(index)"></shopping-list>
+
+    </div>
+-->
+  </body>
+</html>
