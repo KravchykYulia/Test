@@ -1,0 +1,20 @@
+<h1>Name list</h1>
+<ul>
+  <li ng-repeat="item in list.items">
+    <div ng-click="list.onActive({index: $index});">
+       {{ item.name }}
+       <div>{{list.numberComments({index: $index})}} </div>
+    </div>
+    <button ng-click="list.onRemove({index: $index});">Delete</button>
+  </li>
+</ul>
+<h1>Comments# {{list.activeName()}}</h1>
+
+
+<div ng-repeat="item in list.items" ng-if="item.active">
+  <ul>
+    <li ng-repeat="comment in item.comments">{{comment}}</li>
+  </ul>
+          
+</div>
+
