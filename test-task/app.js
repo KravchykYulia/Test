@@ -13,95 +13,119 @@ function NameListDirective() {
     templateUrl: 'nameList.html',
     scope: {
       items: '<',
-      onRemove: '&'
+      onRemove: '&',
+      onActive: '&'
     },
-    // controller: NameListDirectiveController,
-    // controllerAs: 'list',
-    // bindToController: true
+    controller: NameListDirectiveController,
+    controllerAs: 'list',
+    bindToController: true
   };
 
   return ddo;
 };
+
+function NameListDirectiveController() {
+  var list = this;
+};
+
 function СommentsListDirective() {
   var ddo = {
-    templateUrl: 'nameList.html',
+    templateUrl: 'commentsList.html',
     scope: {
       items: '<',
       myTitle: '@title'
     },
-    // controller: СommentsListDirectiveController,
-    // controllerAs: 'list',
-    // bindToController: true
+    controller: СommentsListDirectiveController,
+    controllerAs: 'list',
+    bindToController: true
   };
 
   return ddo;
 };
-
+function СommentsListDirectiveController() {
+  var list = this;
+};
 
 CustomNameListController.$inject = ['CustomService'];
 function CustomNameListController(CustomService) {
   var list = this;
-  var origTitle = "Comments #1";
-  list.title = origTitle + " (" + list.items.length + " items )";
+  list.items = CustomService.getItems();
+  var origTitle = "Comments #";
+  list.title = origTitle
+  // + " (" + list.items.length + " items )";
 
-//    // list.removeItem = function (itemIndex) {
-//    //  MenuSearchService.removeItem(list.foundItems, itemIndex)};
-
-
-//   list.items = CustomService.getItems();
-//   //list.comments=CustomService.getComments();???
-//   list.itemName = "";
-//   list.customComment = "";
+  list.customName = "";
+  list.customComment = "";
   list.addItem = function () {
     CustomService.addItem(list.customName);
-    list.title = origTitle + " (" + list.items.length + " items )";
+    // list.title = origTitle + " (" + list.items.length + " items )";
+    list.customName = ""
+    // console.log(list.items);
   };
 
+  list.activateItem = function (itemIndex) {
+    CustomService.activateItem(itemIndex);
+    // console.log(list.items);
+  };
 
-//   list.addComment = function(keyEvent) {
-//   if (keyEvent.which === 13){
-//     CustomService.addComment(list.customComment);
+  list.removeItem = function (itemIndex) {
+    CustomService.removeItem(itemIndex);
+    // console.log(list.items);
+  };
 
-//   }
-// };
+  list.addComment = function(keyEvent) {
+    if (keyEvent.which === 13){
+    CustomService.addComment(list.customComment);
+    list.customComment = ""
+    }
+   
+ 
+  };
 
-
-
-//   list.removeItem = function (itemIndex) {
-//     shoppingList.removeItem(itemIndex);
-//     this.title = origTitle + " (" + list.items.length + " items )";
-//   };
 };
 
 
-// If not specified, maxItems assumed unlimited
+
 function CustomService() {
   var service = this;
 
-  // List of custom info: name and comments
+  // List of custom`s name
   var items = [];
 
   service.addItem = function (itemName) {
+      for (var i=0; i<items.length; i++)
+        {items[i].active=false} ;
       var item = {
         name: itemName,
-        // comments: customComment
+        active: true,
+        comments: []
       };
       items.push(item);
   };
 
-//   service.removeItem = function (itemIndex) {
-//     items.splice(itemIndex, 1);
-//   };
+  service.removeItem = function (itemIndex) {
+    items.splice(itemIndex, 1);
+  };
 
-//   service.getItems = function () {
-//     return items;
-//   };
-//   service.getComments = function () {
-//     return comments;
-//   };
+  service.getItems = function () {
+    return items;
+  };
+
+  service.activateItem = function (itemIndex) {
+    for (var i=0; i<items.length; i++){
+           if(i===itemIndex) 
+           {items[i].active=true}
+           else {items[i].active=false}     
+    }
+  };
+  service.addComment = function (itemComment) {
+     for (var i=0; i<items.length; i++){
+           if(items[i].active===true) 
+           {items[i].comments.push(itemComment)}
+     };
  };
 
-
+};
 
 
 })();

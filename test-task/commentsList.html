@@ -1,0 +1,10 @@
+<h1>{{list.myTitle }}</h1>
+<ul>
+  <li ng-repeat="item in list.items">
+    <div ng-if="item.active">
+       <!-- {{ item.comments }} -->
+       {{ item.name }}
+    </div>
+  </li>
+</ul>
+

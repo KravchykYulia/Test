@@ -21,15 +21,16 @@
               <button class="btn" ng-click="list.addItem();">Add new</button>
                 
 
-            <!--   <name-list
+              <name-list
                     items="list.items"
-                    on-remove="list.removeItem(index)"></name-list> -->
+                    on-remove="list.removeItem(index)"
+                    on-active="list.activateItem(index)"></name-list>
           </section>
 
           <section id="comments">
-              <!-- <comments-list
+              <comments-list
                     items="list.comments"
-                    title="{{list.title}}"></comments-list> -->
+                    title="{{list.title}}"></comments-list>
   
               <input type="text" class="form-control" ng-model="list.customComment" ng-keypress="list.addComment($event)">
                      
@@ -38,20 +39,6 @@
     </div>
 
         
-    <!-- LIST #1 - unlimited items 
-    <div id="list" ng-controller='ShoppingListController as list'>
-      <input type="text" ng-model="list.itemName" placeholder="item name">
-      <input type="text" ng-model="list.itemQuantity" placeholder="quantity">
-      <button ng-click="list.addItem();">Add Item</button>
-      <span>{{ list.lastRemoved }}</span>
 
-      <shopping-list
-        items="list.items"
-        title="{{list.title}}"
-        bad-remove="list.removeItem"
-        on-remove="list.removeItem(index)"></shopping-list>
-
-    </div>
--->
   </body>
 </html>
