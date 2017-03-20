@@ -6,13 +6,17 @@ angular.module('CommentsList')
 
 function CommentsListDirective() {
   var ddo = {
-    templateUrl: 'commentsList.html',
+    templateUrl: 'src/commentsList.template.html',
     scope: {
       items: '<',
+      emptyname: '<',
+      emptycomment: '<',
       onRemove: '&',
       onActive: '&',
       activeName: '&',
-      numberComments: '&'
+      numberComments: '&',
+      addName: '&',
+      addComment: '&'
     },
     controller: CommentsListDirectiveController,
     controllerAs: 'list',

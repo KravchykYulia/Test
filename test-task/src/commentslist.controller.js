@@ -9,17 +9,21 @@ CommentsListController.$inject = ['CommentsListService'];
 function CommentsListController(CommentsListService) {
   var list = this;
 
-  list.customName = "";
-  list.customComment = "";
+ 
+  list.emptyName = false;
+  list.emptyComment = false;
   list.items = CommentsListService.getItems();
  
   list.activeItem = function () {
     return CommentsListService.activeItem();
-  }
+  };
 
-  list.addItem = function () {
-    CommentsListService.addItem(list.customName);
-    list.customName = ""
+  list.addItem = function (itemName) {
+    if (itemName.length) {
+    list.emptyName=false;
+    CommentsListService.addItem(itemName);
+    }
+    else {list.emptyName=true}
   };
 
   list.activateItem = function (itemIndex) {
@@ -32,16 +36,17 @@ function CommentsListController(CommentsListService) {
   
   list.numberOfComments = function (itemIndex) {
     return CommentsListService.numberOfComments(itemIndex);
-  }
-
-  list.addComment = function(keyEvent) {
-    if (keyEvent.which === 13){
-    CommentsListService.addComment(list.customComment);
-    list.customComment = ""
-    }
   };
 
+  list.addComment = function(keyEvent, itemComment) {
+    if (keyEvent.which === 13) {
+       if (itemComment.length) {
+       list.emptyComment=false;
+       CommentsListService.addComment(itemComment);
+       itemComment=""}
+       else {list.emptyComment=true}
+    };
+  };
 };
-
 
 })();

@@ -1,20 +1,29 @@
-<h1>Name list</h1>
+<div id="names">
+<h1>Items</h1>
+<input class="btn" type="text" placeholder="Type name here..." ng-model="list.customName">
+<button class="btn add-name" ng-click="list.addName({newItem: list.customName}); list.customName='';">Add new</button> 
+<span ng-show="list.emptyname">Please enter your name!</span>
 <ul>
   <li ng-repeat="item in list.items">
     <div ng-click="list.onActive({index: $index});">
        {{ item.name }}
-       <div>{{list.numberComments({index: $index})}} </div>
+       <div class="number-comments">{{list.numberComments({index: $index})}} </div>
     </div>
-    <button ng-click="list.onRemove({index: $index});">Delete</button>
+    <button class="btn delete-name" ng-click="list.onRemove({index: $index});">Delete</button>
   </li>
 </ul>
-<h1>Comments# {{list.activeName()}}</h1>
-
-
-<div ng-repeat="item in list.items" ng-if="item.active">
-  <ul>
-    <li ng-repeat="comment in item.comments">{{comment}}</li>
-  </ul>
-          
 </div>
-
+<div id="comments">
+    <h1>Comments# {{list.activeName()}}</h1>
+    <div ng-repeat="item in list.items" ng-if="item.active">
+      <ul>
+        <li ng-repeat="comment in item.comments track by $index">
+           <div class="square"></div>
+           {{comment}}
+        </li>
+      </ul>     
+    </div>
+    <div class="square light-square"></div>
+    <input type="text" class="add-comment" ng-model="list.customComment" ng-keypress="list.addComment({event: $event, newComment: list.customComment});">
+    <span ng-show="list.emptycomment">Please enter your comment!</span>
+</div>

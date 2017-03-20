@@ -7,26 +7,29 @@
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
-    <div id="overview">
-          Main
-          Overview
-    </div>
-    <div id="main" class="container" ng-controller="CommentsListController as list">
-        <h1>Items</h1>
-        <input type="text" placeholder="Type name here..." class="form-control" ng-model="list.customName">
-        <button class="btn" ng-click="list.addItem();">Add new</button>
-                
+    <section  id="overview">
+        <h1>Main</h1>
+        <div>Overview</div>
+    </section>
+    <section id="main" class="container" ng-controller="CommentsListController as list">
+       <!--  <h1>Items</h1>
+        <input type="text" placeholder="Type name here..." class="form-control" ng-model="list.customName">          
+        <button class="btn" ng-click="list.addItem();">Add new</button> 
+        <span ng-show="list.emptyName">Please enter your name!</span> -->    
         <comments-list
                        items="list.items"
+                       emptyname="list.emptyName"
+                       emptycomment="list.emptyComment"
                        on-remove="list.removeItem(index)"
                        on-active="list.activateItem(index)"
                        active-name="list.activeItem()"
-                       number-comments="list.numberOfComments(index)">
+                       number-comments="list.numberOfComments(index)"
+                       add-name="list.addItem(newItem)"
+                       add-comment="list.addComment(event, newComment)">
         </comments-list>
 
-        <input type="text" class="form-control" ng-model="list.customComment" ng-keypress="list.addComment($event)">
-    </div>
-    
+    </section>
+
     <!-- Libraries -->
     <script src="angular.min.js"></script>
 
@@ -34,9 +37,9 @@
     <script src="src/commentslist.module.js"></script>
    
     <!-- 'CommentsList' module artifacts -->
+    <script src="src/commentslist.controller.js"></script>
     <script src="src/commentslist.directive.js"></script>
-    <script src="src/commentslist.controller"></script>
-    <script src="src/commentslist.service"></script>
-  
+    <script src="src/commentslist.service.js"></script>
+  </div>
   </body>
 </html>
