@@ -43,7 +43,7 @@ function CommentsListController(CommentsListService) {
        if (itemComment.length) {
        list.emptyComment=false;
        CommentsListService.addComment(itemComment);
-       itemComment=""}
+       // $scope.$broadcast('comment:add');}
        else {list.emptyComment=true}
     };
   };

@@ -26,8 +26,22 @@ function CommentsListDirective() {
   return ddo;
 };
 
-function CommentsListDirectiveController() {
+CommentsListDirectiveController.$inject =['$scope']
+function CommentsListDirectiveController($scope) {
   var list = this;
+  list.clearInput = function (keyEvent) {
+    if (keyEvent.which === 13) {
+      list.customName="";
+    };
+
+  }
+  // var cancelListener=$scope.$on('comment:add', function (e, data){
+  //   console.log(e);
+  //   list.customName="";
+  // });
+  // list.$onDestroy=function (){
+  //   cancelListener();
+  // };
 };
 
 })();
