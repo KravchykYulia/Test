@@ -13,17 +13,17 @@ h1 {
 	font-weight: normal;
 	color: #AFAEB4;
 }
-#overview {
+#sidebar {
 	width: 250px;
 	background-color: #2C2F3E;
 	float: left;
 	display: inline-block;
 }
-#overview h1{
+#sidebar h1{
 	padding-left: 20px;
 	margin-bottom: 70px;
 }
-#overview div {
+#sidebar div {
 	padding: 20px;
 	background-color: #FB3A4D;
 	color: 	#FFFFFF;
@@ -32,28 +32,29 @@ h1 {
 	padding-top: 30px;
 	padding-left: 30px;
 	display: inline-block;
-	width: 1070px;
+	width: calc(100% - 250px);
+	overflow: scroll; 
 }
 #names, #comments {
-    height: 100%;
-    width: 500px;
+    width: 49%;
     float: left;
     border: 1px solid #cbcace;
     box-shadow: 2px 2px 5px rgba(0,0,0,.2)
 }
 #names, #comments {
-	margin-right: 20px;
+	margin-right: 1%;
 	padding-left: 20px;
 }
 #names .btn {
     border-radius: 3px;
     font-size: 20px;
     height: 40px;
+    border: 1px solid #d2d2d2;
 }
 #names input {	
 	padding-left: 5px;
 	margin-right: 5px;
-	width: 320px;	
+	width: calc(100% - 160px);	
 }
 #names .add-name {
 	width: 125px;
@@ -73,12 +74,12 @@ h1 {
 #names li {
     border-bottom: 1px solid #d2d2d2;
     font-weight: bold;
-    width: 456px;
+    width: 95%;
     padding: 5px 0;
 }
 #names li div {
     display: inline-block;
-    width: 350px;
+    width: calc(100% - 110px);
 }
 #names .number-comments {
 	padding: 5px;
@@ -90,7 +91,7 @@ h1 {
 #comments li {
     border-bottom: 1px solid #d2d2d2;
     padding: 5px 0;
-    width: 456px;
+    width: 95%;
     position: relative;
     min-height: 60px;
 }
