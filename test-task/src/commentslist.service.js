@@ -6,13 +6,20 @@ angular.module('CommentsList')
 
 function CommentsListService() {
   var service = this;
-
   var items = [];
 
-  service.getItems = function () {
-    return items;
+  service.updateItems = function (itemsArr) {
+    if (window.localStorage && itemsArr) {  
+       localStorage.setItem("customs", angular.toJson(itemsArr));}  
+    items = itemsArr;  
   };
 
+  service.getItems = function () {
+    items = angular.fromJson(localStorage.getItem("customs"));                       
+    items = items ? items : [];
+    return items;
+  };
+  
   service.activeItem = function () {
      var foundItem=1;
      for (var i=0; i<items.length; i++){

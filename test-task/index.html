@@ -12,10 +12,6 @@
         <div>Overview</div>
     </section>
     <section id="main" class="container" ng-controller="CommentsListController as list">
-       <!--  <h1>Items</h1>
-        <input type="text" placeholder="Type name here..." class="form-control" ng-model="list.customName">          
-        <button class="btn" ng-click="list.addItem();">Add new</button> 
-        <span ng-show="list.emptyName">Please enter your name!</span> -->    
         <comments-list
                        items="list.items"
                        emptyname="list.emptyName"
@@ -27,7 +23,6 @@
                        add-name="list.addItem(newItem)"
                        add-comment="list.addComment(event, newComment)">
         </comments-list>
-
     </section>
 
     <!-- Libraries -->

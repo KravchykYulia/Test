@@ -8,12 +8,11 @@ CommentsListController.$inject = ['CommentsListService'];
 
 function CommentsListController(CommentsListService) {
   var list = this;
-
  
   list.emptyName = false;
   list.emptyComment = false;
   list.items = CommentsListService.getItems();
- 
+  
   list.activeItem = function () {
     return CommentsListService.activeItem();
   };
@@ -22,6 +21,8 @@ function CommentsListController(CommentsListService) {
     if (itemName.length) {
     list.emptyName=false;
     CommentsListService.addItem(itemName);
+    console.log(list.items);
+    CommentsListService.updateItems(list.items);
     }
     else {list.emptyName=true}
   };
@@ -32,6 +33,7 @@ function CommentsListController(CommentsListService) {
 
   list.removeItem = function (itemIndex) {
     CommentsListService.removeItem(itemIndex);
+    CommentsListService.updateItems(list.items);
   };
   
   list.numberOfComments = function (itemIndex) {
@@ -43,7 +45,8 @@ function CommentsListController(CommentsListService) {
        if (itemComment.length) {
        list.emptyComment=false;
        CommentsListService.addComment(itemComment);
-       // $scope.$broadcast('comment:add');}
+       CommentsListService.updateItems(list.items);
+       }
        else {list.emptyComment=true}
     };
   };

@@ -6,8 +6,9 @@
 <ul>
   <li ng-repeat="item in list.items">
     <div ng-click="list.onActive({index: $index});">
-       {{ item.name }}
-       <span class="number-comments">{{list.numberComments({index: $index})}} </span>
+        <div ng-if="item.active===true" class="verticalLine"></div>
+        {{ item.name }}
+        <span class="number-comments">{{list.numberComments({index: $index})}} </span>
     </div>
     <button class="btn delete-name" ng-click="list.onRemove({index: $index});">Delete</button>
   </li>
@@ -23,9 +24,9 @@
         </li>
       </ul>     
     </div>
-      <div class="add-comment">
-        <div class="square light-square"></div>
-        <input type="text" ng-model="list.customComment" ng-keypress="list.addComment({event: $event, newComment: list.customComment});">
-        <span ng-show="list.emptycomment">Please enter your comment!</span>
-      </div>
+    <div class="add-comment">
+      <div class="square light-square"></div>
+      <textarea type="text" ng-model="list.customComment" ng-keypress="list.addComment({event: $event, newComment: list.customComment}); list.clearInput($event)"></textarea>
+      <span ng-show="list.emptycomment">Please enter your comment!</span>
+    </div>
 </div>
