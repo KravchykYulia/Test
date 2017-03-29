@@ -1,0 +1,16 @@
+<h1>Welcome to signin view!</h1>
+<!-- <div ng-show="error" class="alert alert-danger">{{error}}</div> -->
+<form name="form" ng-submit="signin.login()" role="form" novalidate>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="form-control" ng-model="signin.email" required />
+        <span ng-show="(form.email.$invalid || form.email.$error.required) && form.email.$touched" class="help-block">Must be a valid email address: handle@domain format</span>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control" ng-model="signin.password" required />
+        <span ng-show="form.password.$dirty && form.password.$error.required && form.password.$touched" class="help-block">Password is required</span>
+        <button type="submit" ng-disabled="form.$invalid" class="btn">Submit</button>
+    </div>
+</form>
+
+
+
+<a ui-sref="block">See images!</a>

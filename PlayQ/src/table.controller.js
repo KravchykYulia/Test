@@ -8,6 +8,7 @@ TableController.$inject = ['UserImagesService'];
 
 function TableController(UserImagesService) {
   var table = this;
+  
  
 };
 

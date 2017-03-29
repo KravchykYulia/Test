@@ -8,6 +8,15 @@ function UserImagesService () {
   var service = this;
   // var items = [];
 
+   service.getUsersInfo = function () {
+    var response = $http({
+      method: "GET",
+      url: "/src/users.json"
+    });
+
+    return response;
+  };
+
   // service.updateItems = function (itemsArr) {
   //   if (window.localStorage && itemsArr) {  
   //      localStorage.setItem("customs", angular.toJson(itemsArr));}  

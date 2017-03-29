@@ -1,23 +1,13 @@
-{ "Users": [ {"Id": 1  "name": "testUser1",  "email": "testEmail1@gmail.com",  "password": "test1"}, 
-             {"Id": 2  "name": "testUser2",  "email": "testEmail2@gmail.com",  "password": "test2"},
-             {"Id": 3  "name": "testUser3",  "email": "testEmail3@gmail.com",  "password": "test3"},
-             {"Id": 4  "name": "testUser4",  "email": "testEmail4@gmail.com",  "password": "test4"},
-             {"Id": 5  "name": "testUser5",  "email": "testEmail5@gmail.com",  "password": "test5"},
-             {"Id": 6  "name": "testUser6",  "email": "testEmail6@gmail.com",  "password": "test6"},
-             {"Id": 7  "name": "testUser7",  "email": "testEmail7@gmail.com",  "password": "test7"},
-             {"Id": 8  "name": "testUser8",  "email": "testEmail8@gmail.com",  "password": "test8"},
-             {"Id": 9  "name": "testUser9",  "email": "testEmail9@gmail.com",  "password": "test9"},
-             {"Id": 10  "name": "testUser10",  "email": "testEmail10@gmail.com",  "password": "test10"},
+{ "Users": [ {"Id": 1,  "name": "testUser1",  "email": "testEmail1@gmail.com",  "password": "test1"}, 
+             {"Id": 2,  "name": "testUser2",  "email": "testEmail2@gmail.com",  "password": "test2"},
+             {"Id": 3,  "name": "testUser3",  "email": "testEmail3@gmail.com",  "password": "test3"},
+             {"Id": 4,  "name": "testUser4",  "email": "testEmail4@gmail.com",  "password": "test4"},
+             {"Id": 5,  "name": "testUser5",  "email": "testEmail5@gmail.com",  "password": "test5"},
+             {"Id": 6,  "name": "testUser6",  "email": "testEmail6@gmail.com",  "password": "test6"},
+             {"Id": 7,  "name": "testUser7",  "email": "testEmail7@gmail.com",  "password": "test7"},
+             {"Id": 8,  "name": "testUser8",  "email": "testEmail8@gmail.com",  "password": "test8"},
+             {"Id": 9,  "name": "testUser9",  "email": "testEmail9@gmail.com",  "password": "test9"},
+             {"Id": 10,  "name": "testUser10",  "email": "testEmail10@gmail.com",  "password": "test10"},
 
-  ],
-  "Images1": [];
-  "Images2": [];
-  "Images3": [];
-  "Images4": [];
-  "Images5": [];
-  "Images6": [];
-  "Images7": [];
-  "Images8": [];
-  "Images9": [];
-  "Images10": [];
+  ]
 } 

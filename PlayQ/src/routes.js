@@ -13,12 +13,12 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     .state('table', {
       url: '/',
       templateUrl: 'src/templates/table.template.html',
-      controller: 'TableController as table', 
+      controller: 'TableController as table'
       // resolve: {
-      //   items: ['MenuDataService', function (MenuDataService) {
-      //     return MenuDataService.getMenuCategories();
+      //   items: ['UserImagesService', function (UserImagesService) {
+      //     return UserImagesService.getMenuCategories();
       // }]
-     }
+     //}
     })
 
    .state('block', {
@@ -26,10 +26,10 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
      templateUrl: 'src/templates/block.template.html',
      controller: 'BlockController as block', 
      // resolve: {
-     //  items: ['MenuDataService', function (MenuDataService) {
-     //    return MenuDataService.getMenuCategories();
+     //  items: ['UserImagesService', function (UserImagesService) {
+     //    return UserImagesService.getMenuCategories();
      //  }]
-     }
+     //}
    })
    
    .state('upload', {
@@ -37,20 +37,22 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
      templateUrl: 'src/templates/upload.template.html',
      controller: 'UploadController as upload', 
      // resolve: {
-     //  items: ['MenuDataService', function (MenuDataService) {
-     //    return MenuDataService.getMenuCategories();
+     //  items: ['UserImagesService', function (UserImagesService) {
+     //    return UserImagesService.getMenuCategories();
      //  }]
-     }
+    // }
    })
 
    .state('signin', {
      url: '/signin',
      templateUrl: 'src/templates/signin.template.html',
      controller: 'SignInController as signin', 
-     // resolve: {
-     //  items: ['MenuDataService', function (MenuDataService) {
-     //    return MenuDataService.getMenuCategories();
-     //  }]
+     resolve: {
+      items: ['UserImagesService', function (UserImagesService) {
+        return UserImagesService.getUsersInfo();
+      }]
      }
    })
+}
+})();
 
