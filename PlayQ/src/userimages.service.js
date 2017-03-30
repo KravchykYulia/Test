@@ -4,11 +4,12 @@
 angular.module('App')
 .service('UserImagesService', UserImagesService);
 
-function UserImagesService () {
+UserImagesService.$inject = ['$http'];
+function UserImagesService ($http) {
   var service = this;
   // var items = [];
 
-   service.getUsersInfo = function () {
+  service.getUsersInfo = function () {
     var response = $http({
       method: "GET",
       url: "/src/users.json"
@@ -16,6 +17,15 @@ function UserImagesService () {
 
     return response;
   };
+  service.login = function (email,password,usersArr) {
+    var result={};
+     if(usersArr.some(function(e){return e.email===email && e.password===password})){
+      result={success: true}}
+     else {result={success: false, message: 'Username or password is incorrect'}}
+     console.log(result);
+     return result;
+    };
+
 
   // service.updateItems = function (itemsArr) {
   //   if (window.localStorage && itemsArr) {  

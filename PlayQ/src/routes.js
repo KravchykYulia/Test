@@ -46,12 +46,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
    .state('signin', {
      url: '/signin',
      templateUrl: 'src/templates/signin.template.html',
-     controller: 'SignInController as signin', 
-     resolve: {
-      items: ['UserImagesService', function (UserImagesService) {
-        return UserImagesService.getUsersInfo();
-      }]
-     }
+     controller: 'SignInController as signin' 
    })
 }
 })();

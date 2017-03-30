@@ -8,9 +8,8 @@
         <input type="password" name="password" id="password" class="form-control" ng-model="signin.password" required />
         <span ng-show="form.password.$dirty && form.password.$error.required && form.password.$touched" class="help-block">Password is required</span>
         <button type="submit" ng-disabled="form.$invalid" class="btn">Submit</button>
-    </div>
 </form>
-
+{{signin.users}}
 
 
 <a ui-sref="block">See images!</a>
