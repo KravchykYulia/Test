@@ -16,6 +16,11 @@
 h1 {
 	font-size: 30px;
 }
+a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #c0c0c0;
+}
 
 /* ---------------Signin page-----------------*/
 #signin {

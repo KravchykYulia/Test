@@ -6,12 +6,17 @@ angular.module('App')
 RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 function RoutesConfig($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/signin');
 
   // Set up UI states
   $stateProvider
+    .state('signin', {
+     url: '/signin',
+     templateUrl: 'src/templates/signin.template.html',
+     controller: 'SignInController as signin' 
+   })
     .state('table', {
-      url: '/',
+      url: '/table',
       templateUrl: 'src/templates/table.template.html',
       controller: 'TableController as table'
     })
@@ -28,11 +33,6 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
      controller: 'UploadController as upload', 
    })
 
-   .state('signin', {
-     url: '/signin',
-     templateUrl: 'src/templates/signin.template.html',
-     controller: 'SignInController as signin' 
-   })
 }
 })();
 
