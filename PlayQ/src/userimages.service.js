@@ -11,7 +11,7 @@ function UserImagesService ($http, $rootScope) {
   service.getUsersInfo = function () {
     var response = $http({
       method: "GET",
-      url: "/src/users.json"
+      url: "src/users.json"
     });
 
     return response;
