@@ -14,33 +14,18 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       url: '/',
       templateUrl: 'src/templates/table.template.html',
       controller: 'TableController as table'
-      // resolve: {
-      //   items: ['UserImagesService', function (UserImagesService) {
-      //     return UserImagesService.getMenuCategories();
-      // }]
-     //}
     })
 
    .state('block', {
      url: '/images',
      templateUrl: 'src/templates/block.template.html',
      controller: 'BlockController as block', 
-     // resolve: {
-     //  items: ['UserImagesService', function (UserImagesService) {
-     //    return UserImagesService.getMenuCategories();
-     //  }]
-     //}
    })
    
    .state('upload', {
      url: '/upload',
      templateUrl: 'src/templates/upload.template.html',
      controller: 'UploadController as upload', 
-     // resolve: {
-     //  items: ['UserImagesService', function (UserImagesService) {
-     //    return UserImagesService.getMenuCategories();
-     //  }]
-    // }
    })
 
    .state('signin', {

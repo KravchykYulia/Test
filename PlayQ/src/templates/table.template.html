@@ -1,11 +1,40 @@
-<h1>Welcome to table view!</h1>
-<<!-- ul>
-  <li ng-repeat="item in table.items">
-    {{ item.id }}  {{ item.imageName }}
-  </li>
-</ul> -->
+<div id="table">
+<h1>Table View</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Image Name</th>
+        <th>Uploaded User</th>
+        <th>Checksum</th>
+        <th>Events</th>
+    </tr>
+    <tr ng-repeat="file in table.files track by $index">
+        <td>{{file.id}}</td>
+        <td>{{file.imageName}}</td>
+        <td>{{file.uploadedUser}}</td>
+        <td>{{file.checksum}}</td>
+        <td>
+    	    <button class="view-button" ng-click="table.openModal($index)">View</button>
+    	    <button class="delete-button" ng-click="table.remove($index)">Delete</button>
+        </td>
+    </tr>
+</table>
+<a ui-sref="block">Block View</a>
+<a ui-sref="upload">Image Upload</a>
+</div>
+<div modal ng-show="display">
+    <div class="modal">
+        <div class="modal-body">
+            <h2>Image Preview Modal</h2>
+            <img ng-src={{table.files[index].preview}} class="modal-image">
+            <button ng-click="display=false;">Close</button> 
+        </div>
+    </div>
+    <div class="modal-background"></div>
+ </div>
+</div>
 
-<a ui-sref="block">See images!</a>
 
 
-<!-- ui-sref="mainList.itemDetail({itemId: $index})" in li-->
+
+

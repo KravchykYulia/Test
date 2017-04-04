@@ -4,16 +4,19 @@
     <title>Test Task for PlayQ</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--   <link rel="stylesheet" href="styles/styles.css"> -->
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
-    <header>
+    <header ng-controller='AppController as main'>
         <ui-view></ui-view> 
+        <div class="signout">
+            <button id="sign-out-btn" ng-click="main.removeUser()" class="sign-btn">Sign Out</button>
+        </div>
     </header>
-    hhh
     <!-- Libraries -->
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-ui-router.min.js"></script>
+     <script src="lib/sha256.min.js"></script>
 
     <!-- Module -->
     <script src="src/app.module.js"></script>
@@ -22,10 +25,13 @@
     <script src="src/routes.js"></script>
    
     <!-- 'App' module artifacts -->
+    <script src="src/main.controller.js"></script>
     <script src="src/table.controller.js"></script>
     <script src="src/block.controller.js"></script>
     <script src="src/upload.controller.js"></script>
     <script src="src/signin.controller.js"></script>
     <script src="src/userimages.service.js"></script>
+    <script src="src/modal.directive.js"></script>
+    
   </body>
 </html>
